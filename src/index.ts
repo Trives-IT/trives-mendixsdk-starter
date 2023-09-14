@@ -23,7 +23,7 @@ async function main() {
   const mxWorkingCopy = await mxApp.createTemporaryWorkingCopy(config.branch);
   const mxModel = await mxWorkingCopy.openModel();
 
-  // Do your worst here :-):
+  // Do your worst here :-): Some examples:
   console.log(mxApp.appId);
   console.log(mxWorkingCopy.workingCopyId);
   console.log(mxModel.allModules().forEach((module) => console.log(module.name)));
