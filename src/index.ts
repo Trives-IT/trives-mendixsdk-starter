@@ -1,4 +1,4 @@
-import { App, MendixPlatformClient, setPlatformConfig } from "mendixplatformsdk";
+import { App, MendixPlatformClient, OnlineWorkingCopy, RepositoryType, setPlatformConfig } from "mendixplatformsdk";
 import * as fs from "fs";
 import { IModel } from "mendixmodelsdk";
 
@@ -12,25 +12,29 @@ async function main() {
   // Set up your Mendix Model SDK client:
   setPlatformConfig({ mendixToken: config.mendixtoken });
   mxClient = new MendixPlatformClient();
-  // Get an existing app:
+
+  // Option 1: Get an existing app:
   const mxApp = getExistingApp(config.projectid);
 
-  // Create a new app:
-  //const mxApp = await createNewApp("testje");
+  // Option 2: Create a new app:
+  // const mxApp = await createNewApp("testje", undefined, "git");
 
-  const branch = await mxApp.getRepository().getBranch(config.branch);
-  const mxWorkingCopy = await mxApp.createTemporaryWorkingCopy(branch.name);
+  // Create a working copy and open the model:
+  const mxWorkingCopy = await mxApp.createTemporaryWorkingCopy(config.branch);
   const mxModel = await mxWorkingCopy.openModel();
 
   // Do your worst here :-):
   console.log(mxApp.appId);
-  //console.log(branch.latestCommit.message);
   console.log(mxWorkingCopy.workingCopyId);
   console.log(mxModel.allModules().forEach((module) => console.log(module.name)));
+
+  // Optional, if you want to commit your changes:
+  // await mxModel.flushChanges();
+  // await mxWorkingCopy.commitToRepository(config.branch);
 }
 
-async function createNewApp(name: string, templateId?: string): Promise<App> {
-  const newApp = await mxClient.createNewApp(name, { templateId: templateId });
+async function createNewApp(name: string, templateId?: string, repositoryType: RepositoryType = "git"): Promise<App> {
+  const newApp = await mxClient.createNewApp(name, { templateId: templateId, repositoryType: repositoryType });
   return newApp;
 }
 
