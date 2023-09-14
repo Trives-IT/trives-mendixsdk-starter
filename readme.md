@@ -1,6 +1,7 @@
 Setup:
 
 - Follow the Mendix tutorial on how to setup a Typescript project: https://docs.mendix.com/apidocs-mxsdk/mxsdk/setting-up-your-development-environment/
+- Make sure you have a Mendix Personal Access Token: https://docs.mendix.com/apidocs-mxsdk/mxsdk/set-up-your-pat/
 
 - Create a folder named 'config' in this project's root folder
 - In it, put a file named 'config.json' that contains the following JSON snippet:
