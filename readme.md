@@ -1,13 +1,13 @@
 Setup:
 
-- Follow the Mendix tutorial on how to setup a Typescript project
+- Follow the Mendix tutorial on how to setup a Typescript project: https://docs.mendix.com/apidocs-mxsdk/mxsdk/setting-up-your-development-environment/
 
 - Create a folder named 'config' in this project's root folder
 - In it, put a file named 'config.json' that contains the following JSON snippet:
 
 {
-"projectid": "44ad0bb8-dce0-4a1d-b123-123abd871f7f",
-"mendixtoken": "4g442gtMzKtKxQy8aKFnFfVg7Kt54HuWAK1bSSSswfzsdhsUZ6DFGatXW6XHCQyG3RLzraHjhiAi3dh7QkoaGuKdSstxS7okLRGy",
+"projectid": "123456-abcd-7890-wxyz",
+"mendixtoken": "VGhpcyBpcyBub3QgYSB2YWxpZCBNZW5kaXggdG9rZW4",
 "branch": "main"
 }
 
