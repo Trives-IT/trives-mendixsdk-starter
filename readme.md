@@ -13,5 +13,5 @@ Setup:
 }
 
 - Replace the projectid with the ID of the project you want to use
-- Replace the mendixtoken with the one you generated
-- (Optional) Replace the branch name if you don't want to use the main branch of your project
+- Replace the mendixtoken with the PAT you generated
+- (Optional) Replace the branch name if you don't want to use the main branch of your project, or use 'trunk' in case you're on SVN
