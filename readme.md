@@ -15,6 +15,7 @@ Setup:
 6. Replace {YourMendixTokenHere} with one you have generated (or create at https://user-settings.mendix.com/link/developersettings)
 7. Set the branch that you want to use. The main line for GIT-projects is 'main', for SVN-projects this is 'trunk'.
 8. (Optional) Replace the branch name if you don't want to use the main branch of your project
+9. From your terminal within the project directory, run the command 'npm i'. This will install all the necessary node modules.
 
 ---
 
