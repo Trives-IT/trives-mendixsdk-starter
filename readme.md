@@ -1,16 +1,18 @@
 Setup:
 
-- Follow the Mendix tutorial on how to setup a Typescript project
+1. If you don't have npm or Typescript installed yet, follow the instructions described in section 3 of https://docs.mendix.com/apidocs-mxsdk/mxsdk/setting-up-your-development-environment/#setting. You can ignore the steps before and after.
+2. Create a folder named 'config' in this project's root folder.
+3. In it, put a file named 'config.json' that contains the following JSON snippet:
 
-- Create a folder named 'config' in this project's root folder
-- In it, put a file named 'config.json' that contains the following JSON snippet:
+   {
+   "projectid": "{YourProjectIdHere}",
+   "mendixtoken": "{YourMendixTokenHere}",
+   "branch": "main"
+   }
 
-{
-"projectid": "44ad0bb8-dce0-4a1d-b123-123abd871f7f",
-"mendixtoken": "4g442gtMzKtKxQy8aKFnFfVg7Kt54HuWAK1bSSSswfzsdhsUZ6DFGatXW6XHCQyG3RLzraHjhiAi3dh7QkoaGuKdSstxS7okLRGy",
-"branch": "main"
-}
+4. Replace {YourProjectIdHere} with the ID of the project you want to use. You can find it in Sprintr under General > Settings.
+5. Replace {YourMendixTokenHere} with one you have generated (or create at https://user-settings.mendix.com/link/developersettings)
+6. (Optional) Replace the branch name if you don't want to use the main branch of your project
 
-- Replace the projectid with the ID of the project you want to use
-- Replace the mendixtoken with the one you generated
-- (Optional) Replace the branch name if you don't want to use the main branch of your project
+Instructions:
+This basic project allows you to open a working copy of a Mendix project and more or less do whatever you want with it.
